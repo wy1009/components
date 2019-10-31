@@ -1,0 +1,40 @@
+.thin-border-all,
+.thin-border-b,
+.thin-border-t {
+  position: relative;
+}
+
+.thin-border-t::after,
+.thin-border-b::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-bottom: 1px solid #e6e6e6;
+  transform: scale(0.5);
+}
+
+.thin-border-t::after {
+  top: 0;
+  transform-origin: left top;
+}
+
+.thin-border-b::after {
+  bottom: 0;
+  transform-origin: left bottom;
+}
+
+.thin-border-all::after {
+  position: absolute;
+  box-sizing: border-box;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  border: solid 1px #e6e6e6;
+  transform-origin: left top;
+  transform: scale(0.5);
+  transform-origin: left bottom;
+}
